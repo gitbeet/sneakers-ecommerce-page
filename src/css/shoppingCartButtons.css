@@ -6,7 +6,6 @@
   background-color: var(--clr-white);    
 }
 
-
 .shopping-cart-quantity-buttons{
     display: flex;
     justify-content: space-between;
@@ -28,6 +27,7 @@
 button{
     cursor: pointer;
     border: none;
+    min-width: max-content;    
     background-color: var(--clr-orange);
     color: white;
     font-size: 14px;
