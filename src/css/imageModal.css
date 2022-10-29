@@ -1,0 +1,19 @@
+.desktop-backdrop{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.8);
+    z-index: 3;
+}
+
+.modal-close-button{
+    cursor: pointer;
+    position:absolute;
+    top:calc(50% - 380px);
+    left:calc(50% + 260px);
+    transform: scale(1.6);
+    z-index: 5;
+    filter:brightness(10);
+    /* filter:sepia() saturate(5); */
+      
+}
