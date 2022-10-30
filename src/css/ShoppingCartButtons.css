@@ -43,6 +43,8 @@
 
   .shopping-cart-quantity-number {
     cursor: default;
+    width: 40px;
+    text-align: center;
     font-size: 16px;
     font-weight: 600;
     background-color: var(--clr-neutral-800);
