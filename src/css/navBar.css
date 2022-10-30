@@ -7,7 +7,7 @@
     padding-top: 20px;
     background-color: var(--clr-white);
 }
-
+/* testing if fixes error */
 .mobile-nav-left,
 .mobile-nav-right{
     display: flex;
