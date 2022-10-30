@@ -1,6 +1,7 @@
 import React from "react";
 import { useShoppingCart } from "../context/ShoppingCartContext";
-import "../css/shoppingCartWindow.css";
+import "../css/ShoppingCartWindow.css";
+import Button from "./Button";
 import ShoppingCartWindowProduct from "./ShoppingCartWindowProduct";
 
 function ShoppingCartWindow({
@@ -8,6 +9,7 @@ function ShoppingCartWindow({
   toggleShoppingCartWindow,
 }) {
   const { checkout } = useShoppingCart();
+  const buttonContent = "Checkout";
 
   return (
     <>
@@ -29,7 +31,9 @@ function ShoppingCartWindow({
               <ShoppingCartWindowProduct key={product.name} product={product} />
             ))}
 
-          {checkout.length > 0 && <button>Checkout</button>}
+          {checkout.length > 0 && (
+            <Button type="primary" size="sm" content={buttonContent} />
+          )}
         </div>
         {checkout.length === 0 && (
           <p className="empty-cart-message">Your cart is empty.</p>

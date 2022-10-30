@@ -1,6 +1,6 @@
 import React from "react";
 import { useShoppingCart } from "../context/ShoppingCartContext";
-import "../css/productInfo.css";
+import "../css/ProductInfo.css";
 
 import { formatCurrency } from "../utilities/formatCurrency";
 import ImageCarousel from "./ImageCarousel";

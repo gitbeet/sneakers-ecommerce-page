@@ -1,9 +1,9 @@
-import React from "react";
-import "../css/navBar.css";
-import iconMenu from "../images/icon-menu.svg";
 import logo from "../images/logo.svg";
+import iconMenu from "../images/icon-menu.svg";
 import avatarImage from "../images/image-avatar.png";
-import ShoppingCart from "./ShoppingCart";
+import ShoppingCartNav from "./ShoppingCartNav";
+import UserAvatar from "./UserAvatar";
+import "../css/NavBar.css";
 
 function NavBar({ toggleMenu, toggleShoppingCartWindow }) {
   return (
@@ -35,8 +35,8 @@ function NavBar({ toggleMenu, toggleShoppingCartWindow }) {
         </div>
       </div>
       <div className="mobile-nav-right">
-        <ShoppingCart toggleShoppingCartWindow={toggleShoppingCartWindow} />
-        <img className="mobile-avatar" src={avatarImage} alt="avatar img" />
+        <ShoppingCartNav toggleShoppingCartWindow={toggleShoppingCartWindow} />
+        <UserAvatar avatarImage={avatarImage} />
       </div>
     </div>
   );

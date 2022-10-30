@@ -1,0 +1,43 @@
+.image-border{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 13px ;
+    border: 3px solid var(--clr-orange);
+}
+
+.image-mute{
+    opacity: .5;
+}
+
+@media (min-width:1100px) {
+    .image-border-invisible{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 3px solid transparent;
+        border-radius: 10px;
+    }
+
+    
+    .modal-hover-bg{
+        background-color: white;
+        border: none;
+    }
+
+    .modal-hover{
+        transition: .1s ease-in-out;
+    }
+
+    .modal-hover:hover{
+        opacity: .5;
+    }
+
+    .carousel-thumbnail{
+        cursor: pointer;
+        border-radius: 10px;        
+    }
+}
+
+

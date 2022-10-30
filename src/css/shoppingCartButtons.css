@@ -16,7 +16,13 @@
 }
 
 .shopping-cart-quantity-button{
+    cursor: pointer;
     scale: 1.3;
+    transition: .1s ease-in-out;
+}
+
+.shopping-cart-quantity-button:hover{
+    opacity: .6;
 }
 
 .shopping-cart-quantity-number{
@@ -24,26 +30,6 @@
     font-weight: 600;
 }
 
-button{
-    cursor: pointer;
-    border: none;
-    min-width: max-content;    
-    background-color: var(--clr-orange);
-    color: white;
-    font-size: 14px;
-    font-weight: 600;
-    padding: 15px 40px;
-    border-radius: 10px;
-    transition: .1s ease-in-out;
-}
-
-.add-to-cart-button{
-    box-shadow: 0 10px 30px 5px hsla(26, 100%, 55%,30%);
-}
-
-button:hover{
-    opacity: .6;
-}
 
 .shopping-cart-icon{
     filter: brightness(100);
@@ -68,11 +54,7 @@ button:hover{
         gap: 30px;
     }
 
-    .add-to-cart-button{
-        font-size: 16px;
-        padding: 15px 80px;
-    }
-
+  
     .shopping-cart-quantity-button{
         display: flex;
         justify-content: center;
@@ -81,13 +63,6 @@ button:hover{
         height: 50px;
         transition: .1s ease-in-out;
     }
-
-
-    .shopping-cart-quantity-button:hover{
-        cursor: pointer;
-        opacity: .6;
-    }
-
 
     .shopping-cart-quantity-button > img{
         transform: scale(1.1);

@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import "../css/imageCarousel.css";
+import { useShoppingCart } from "../context/ShoppingCartContext";
 import arrowLeft from "../images/icon-previous.svg";
 import arrowRight from "../images/icon-next.svg";
-import { useShoppingCart } from "../context/ShoppingCartContext";
 import NavigationArrow from "./NavigationArrow";
-import ImageCarouselThumbnailList from "./ImageCarouselThumbnailList";
 import ImageCarouselActiveImage from "./ImageCarouselActiveImage";
+import ImageCarouselThumbnailList from "./ImageCarouselThumbnailList";
+import "../css/ImageCarousel.css";
 
 function ImageCarousel({
   toggleImageModal,
@@ -28,7 +28,6 @@ function ImageCarousel({
         );
       }
     }
-
     document.addEventListener("keydown", keyDownFn);
     return () => document.removeEventListener("keydown", keyDownFn);
   }, []);

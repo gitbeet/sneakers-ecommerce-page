@@ -1,4 +1,6 @@
-import React from "react";
+import ImageCarouselThumbnail from "./ImageCarouselThumbnail";
+import { v4 as uuid } from "uuid";
+import "../css/ImageCarouselThumbnailList.css";
 
 export default function ImageCarouselThumbnailList({
   product,
@@ -14,21 +16,14 @@ export default function ImageCarouselThumbnailList({
     >
       {product.images.thumbnail.map((image, index) => {
         return (
-          <div
-            className={`${
-              index === activeImage ? "image-border" : "image-border-invisible"
-            } ${modal && index !== activeImage ? "modal-hover-bg" : ""}`}
-          >
-            <img
-              onClick={() => onClick(index)}
-              key={index}
-              className={`carousel-thumbnail ${
-                index !== activeImage ? "" : "image-mute"
-              } ${modal && index !== activeImage ? "modal-hover" : ""}`}
-              src={image}
-              alt="carousel thumbnail"
-            />
-          </div>
+          <ImageCarouselThumbnail
+            key={uuid()}
+            image={image}
+            id={index}
+            modal={modal}
+            onClick={onClick}
+            activeImage={activeImage}
+          />
         );
       })}
     </div>

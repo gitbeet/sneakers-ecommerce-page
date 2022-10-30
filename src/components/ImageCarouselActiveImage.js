@@ -1,4 +1,4 @@
-import React from "react";
+import "../css/ImageCarouselActiveImage.css";
 
 export default function ImageCarouselActiveImage({
   modal,

@@ -1,7 +1,7 @@
 import React from "react";
 import { formatCurrency } from "../utilities/formatCurrency";
 import iconDelete from "../images/icon-delete.svg";
-import "../css/shoppingCartWindowProduct.css";
+import "../css/ShoppingCartWindowProduct.css";
 import { useShoppingCart } from "../context/ShoppingCartContext";
 
 function ShoppingCartWindowProduct({ product }) {

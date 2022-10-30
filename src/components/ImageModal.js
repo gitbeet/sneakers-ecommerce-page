@@ -1,8 +1,7 @@
-import React from "react";
 import * as ReactDOM from "react-dom";
 import ImageCarousel from "./ImageCarousel";
 import closeButton from "../images/icon-close.svg";
-import "../css/imageModal.css";
+import "../css/ImageModal.css";
 
 function ImageModal({ toggleImageModal, activeModalImage }) {
   return ReactDOM.createPortal(

@@ -1,13 +1,25 @@
 import React from "react";
 import "../css/shoppingCartButtons.css";
+import ShoppingCartIcon from "../images/icon-cart.svg";
 import buttonMinus from "../images/icon-minus.svg";
 import buttonPlus from "../images/icon-plus.svg";
-import ShoppingCartIcon from "../images/icon-cart.svg";
 import { useShoppingCart } from "../context/ShoppingCartContext";
+import Button from "./Button";
 
 function ShoppingCartButtons() {
   const { product, shoppingCart, addProduct, removeProduct, addToCart } =
     useShoppingCart();
+
+  const buttonContent = (
+    <>
+      <img
+        className="shopping-cart-icon"
+        src={ShoppingCartIcon}
+        alt="shopping cart icon"
+      />
+      Add to cart
+    </>
+  );
 
   return (
     <div className="shopping-cart-buttons">
@@ -29,14 +41,12 @@ function ShoppingCartButtons() {
           <img src={buttonPlus} alt="shopping cart button" />
         </div>
       </div>
-      <button className="add-to-cart-button" onClick={() => addToCart(product)}>
-        <img
-          className="shopping-cart-icon"
-          src={ShoppingCartIcon}
-          alt="shopping cart icon"
-        />
-        Add to cart
-      </button>
+      <Button
+        type="primary"
+        size="md"
+        onClick={() => addToCart(product)}
+        content={buttonContent}
+      />
     </div>
   );
 }

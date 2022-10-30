@@ -1,14 +1,11 @@
 import React from "react";
 import { useShoppingCart } from "../context/ShoppingCartContext";
-import "../css/shoppingCart.css";
+import "../css/ShoppingCartNav.css";
 import shoppingCartIcon from "../images/icon-cart.svg";
 
-function ShoppingCart({ toggleShoppingCartWindow }) {
+function ShoppingCartNav({ toggleShoppingCartWindow }) {
   const { checkout } = useShoppingCart();
-
-  // let totalQuantity = checkout.reduce((acc,x) => acc + x.quantity,0)
   let totalQuantity = checkout.length;
-
   return (
     <div onClick={toggleShoppingCartWindow} className="shopping-cart">
       <img src={shoppingCartIcon} alt="shopping cart icon" />
@@ -19,4 +16,4 @@ function ShoppingCart({ toggleShoppingCartWindow }) {
   );
 }
 
-export default ShoppingCart;
+export default ShoppingCartNav;

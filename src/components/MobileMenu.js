@@ -1,13 +1,19 @@
 import React from "react";
 import * as ReactDOM from "react-dom";
-import "../css/mobileMenu.css";
+import "../css/MobileMenu.css";
 import closeIcon from "../images/icon-close.svg";
+import Backdrop from "./Backdrop";
 
 function MobileMenu({ toggleMenu }) {
   return ReactDOM.createPortal(
     <div className="mobile-menu-container">
       <div className="mobile-menu">
-        <img onClick={toggleMenu} src={closeIcon} alt="close icon" />
+        <img
+          className="mobile-menu-close-button"
+          onClick={toggleMenu}
+          src={closeIcon}
+          alt="close icon"
+        />
         <div className="mobile-nav-elements">
           <p className="mobile-nav-element">Collections</p>
           <p className="mobile-nav-element">Men</p>
@@ -16,9 +22,9 @@ function MobileMenu({ toggleMenu }) {
           <p className="mobile-nav-element">Contact</p>
         </div>
       </div>
-      <div className="mobile-backdrop"></div>
+      <Backdrop onClick={toggleMenu} />
     </div>,
-    document.getElementById("mobile-menu")
+    document.getElementById("modal-root")
   );
 }
 

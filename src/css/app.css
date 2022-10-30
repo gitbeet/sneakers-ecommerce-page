@@ -17,6 +17,8 @@ body,html{
     --clr-light-grayish-blue: hsl(223, 64%, 98%);
     --clr-white : hsl(0, 0%, 100%);
     --clr-black : rgb(0,0,0);
+
+    --clr-backdrop :  rgba(0,0,0,.75);
 }
 
 img{
