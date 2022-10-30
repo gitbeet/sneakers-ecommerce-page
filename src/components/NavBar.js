@@ -3,7 +3,7 @@ import iconMenu from "../images/icon-menu.svg";
 import avatarImage from "../images/image-avatar.png";
 import ShoppingCartNav from "./ShoppingCartNav";
 import UserAvatar from "./UserAvatar";
-import "../css/navBar.css";
+import "../css/NavBar.css";
 // testing
 function NavBar({ toggleMobileMenu }) {
   return (
