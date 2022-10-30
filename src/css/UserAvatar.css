@@ -7,7 +7,7 @@
 }
 
 .mobile-avatar:hover{
-    border-color: var(--clr-orange);
+    border-color: var(--clr-primary-500);
 }
 
 @media (min-width:1100px) {    

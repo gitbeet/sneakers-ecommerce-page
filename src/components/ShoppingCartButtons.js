@@ -5,6 +5,7 @@ import buttonMinus from "../images/icon-minus.svg";
 import buttonPlus from "../images/icon-plus.svg";
 import { useShoppingCart } from "../context/ShoppingCartContext";
 import Button from "./Button";
+import QuantityButton from "./QuantityButton";
 
 function ShoppingCartButtons() {
   const { product, shoppingCart, addProduct, removeProduct, addToCart } =
@@ -24,22 +25,11 @@ function ShoppingCartButtons() {
   return (
     <div className="shopping-cart-buttons">
       <div className="shopping-cart-quantity-buttons">
-        <div
-          className="shopping-cart-quantity-button"
-          onClick={() => removeProduct(product)}
-        >
-          <img src={buttonMinus} alt="shopping cart button" />
-        </div>
+        <QuantityButton type="minus" onClick={() => removeProduct(product)} />
         <div className="shopping-cart-quantity-number">
           {shoppingCart[0]?.quantity || 0}
         </div>
-
-        <div
-          className="shopping-cart-quantity-button"
-          onClick={() => addProduct(product)}
-        >
-          <img src={buttonPlus} alt="shopping cart button" />
-        </div>
+        <QuantityButton type="plus" onClick={() => addProduct(product)} />
       </div>
       <Button
         type="primary"

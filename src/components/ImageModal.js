@@ -2,19 +2,26 @@ import * as ReactDOM from "react-dom";
 import ImageCarousel from "./ImageCarousel";
 import closeButton from "../images/icon-close.svg";
 import "../css/ImageModal.css";
+import { useModal } from "../context/ModalContext";
+import Backdrop from "./Backdrop";
 
-function ImageModal({ toggleImageModal, activeModalImage }) {
+function ImageModal() {
+  const { activeModalImage, toggleImageModal, showImageModal } = useModal();
   return ReactDOM.createPortal(
-    <div>
-      <img
-        className="modal-close-button"
-        onClick={toggleImageModal}
-        src={closeButton}
-        alt="close button"
-      />
-      <ImageCarousel modal={true} initialActiveImage={activeModalImage} />
-      <div onClick={toggleImageModal} className="desktop-backdrop"></div>
-    </div>,
+    <>
+      {showImageModal && (
+        <div>
+          <img
+            className="modal-close-button"
+            onClick={toggleImageModal}
+            src={closeButton}
+            alt="close button"
+          />
+          <ImageCarousel modal={true} initialActiveImage={activeModalImage} />
+        </div>
+      )}
+      {showImageModal && <Backdrop onClick={toggleImageModal} />}
+    </>,
     document.getElementById("modal-root")
   );
 }

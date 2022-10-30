@@ -1,50 +1,36 @@
-import './css/app.css'
+import "./css/app.css";
 import NavBar from "./components/NavBar";
-import MobileMenu from './components/MobileMenu';
-import ProductInfo from './components/ProductInfo';
-import ShoppingCartButtons from './components/ShoppingCartButtons';
-import ShoppingCartProvider from './context/ShoppingCartContext';
-import { useState } from 'react';
-import ShoppingCartWindow from './components/ShoppingCartWindow';
-import ImageModal from './components/ImageModal';
-
+import MobileMenu from "./components/MobileMenu";
+import ProductInfo from "./components/ProductInfo";
+import ShoppingCartProvider from "./context/ShoppingCartContext";
+import ShoppingCartWindow from "./components/ShoppingCartWindow";
+import ImageModal from "./components/ImageModal";
+import ModalProvider from "./context/ModalContext";
+import { useState } from "react";
+import DarkModeProvider from "./context/DarkModeContext";
 
 function App() {
-
-  const [showMobileMenu,setShowMobileMenu] = useState(false)
-  const [showShoppingCartWindow,setShowShoppingCartWindow] = useState(false)
-  const [showImageModal,setShowImageModal] = useState(false)
-  const [activeModalImage,setActiveModalImage] = useState(0)
-
-  function toggleMenu(){
-    setShowMobileMenu(prev => !prev)
-  }
-
-  function toggleShoppingCartWindow(){
-    setShowShoppingCartWindow(prev => !prev)
-  }
-
-  function toggleImageModal(activeImage){
-    setShowImageModal(prev => !prev)
-    setActiveModalImage(activeImage)
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
+  function toggleMobileMenu() {
+    console.log(showMobileMenu);
+    setShowMobileMenu((prev) => !prev);
   }
 
   return (
-    <ShoppingCartProvider>
-      <div className="container">
-        <ShoppingCartWindow 
-              showShoppingCartWindow={showShoppingCartWindow}
-              toggleShoppingCartWindow={toggleShoppingCartWindow} />
-        <NavBar 
-            toggleMenu={toggleMenu}
-            toggleShoppingCartWindow={toggleShoppingCartWindow} />
-        <ProductInfo toggleImageModal={toggleImageModal}/>
-        {showImageModal && <ImageModal toggleImageModal={toggleImageModal} 
-                                       activeModalImage={activeModalImage}/>}
-        {showMobileMenu && <MobileMenu toggleMenu={toggleMenu} />}
-      </div>
-    </ShoppingCartProvider>
-    )
+    <DarkModeProvider>
+      <ModalProvider>
+        <ShoppingCartProvider>
+          <div className="container">
+            <ShoppingCartWindow />
+            <NavBar toggleMobileMenu={toggleMobileMenu} />
+            <ProductInfo />
+            <ImageModal />
+            <MobileMenu show={showMobileMenu} onClose={toggleMobileMenu} />
+          </div>
+        </ShoppingCartProvider>
+      </ModalProvider>
+    </DarkModeProvider>
+  );
 }
 
 export default App;

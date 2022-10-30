@@ -9,8 +9,9 @@ body,html{
 }
 
 :root{
-    --clr-orange:  hsl(26, 100%, 55%);
-    --clr-pale-orange: hsl(25, 100%, 94%);
+    --clr-primary-500:  hsl(26, 100%, 55%);
+    --clr-primary-600:  hsl(32, 100%, 65%);
+    --clr-primary-900: hsl(25, 100%, 94%);
 
     --clr-very-dark-blue: hsl(220, 13%, 13%);
     --clr-dark-grayish-blue: hsl(219, 9%, 45%);

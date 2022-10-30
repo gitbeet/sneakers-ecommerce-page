@@ -1,4 +1,5 @@
 import React from "react";
+import { useModal } from "../context/ModalContext";
 import { useShoppingCart } from "../context/ShoppingCartContext";
 import "../css/ProductInfo.css";
 
@@ -6,7 +7,8 @@ import { formatCurrency } from "../utilities/formatCurrency";
 import ImageCarousel from "./ImageCarousel";
 import ShoppingCartButtons from "./ShoppingCartButtons";
 
-function ProductInfo({ toggleImageModal }) {
+function ProductInfo() {
+  const { toggleImageModal } = useModal();
   const { product } = useShoppingCart();
 
   return (

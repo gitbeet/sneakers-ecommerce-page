@@ -5,13 +5,13 @@ import ShoppingCartNav from "./ShoppingCartNav";
 import UserAvatar from "./UserAvatar";
 import "../css/NavBar.css";
 
-function NavBar({ toggleMenu, toggleShoppingCartWindow }) {
+function NavBar({ toggleMobileMenu }) {
   return (
     <div className="navbar-mobile">
       <div className="mobile-nav-left">
         <img
           className="mobile-menu-icon"
-          onClick={toggleMenu}
+          onClick={toggleMobileMenu}
           src={iconMenu}
           alt="menu icon"
         />
@@ -35,7 +35,7 @@ function NavBar({ toggleMenu, toggleShoppingCartWindow }) {
         </div>
       </div>
       <div className="mobile-nav-right">
-        <ShoppingCartNav toggleShoppingCartWindow={toggleShoppingCartWindow} />
+        <ShoppingCartNav />
         <UserAvatar avatarImage={avatarImage} />
       </div>
     </div>

@@ -4,13 +4,13 @@ import "../css/MobileMenu.css";
 import closeIcon from "../images/icon-close.svg";
 import Backdrop from "./Backdrop";
 
-function MobileMenu({ toggleMenu }) {
+function MobileMenu({ show, onClose }) {
   return ReactDOM.createPortal(
-    <div className="mobile-menu-container">
-      <div className="mobile-menu">
+    <>
+      <div className={show ? "mobile-menu" : "mobile-menu-hidden"}>
         <img
           className="mobile-menu-close-button"
-          onClick={toggleMenu}
+          onClick={onClose}
           src={closeIcon}
           alt="close icon"
         />
@@ -22,8 +22,8 @@ function MobileMenu({ toggleMenu }) {
           <p className="mobile-nav-element">Contact</p>
         </div>
       </div>
-      <Backdrop onClick={toggleMenu} />
-    </div>,
+      {show && <Backdrop onClick={onClose} />}
+    </>,
     document.getElementById("modal-root")
   );
 }

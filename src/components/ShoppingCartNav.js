@@ -1,10 +1,12 @@
 import React from "react";
+import { useModal } from "../context/ModalContext";
 import { useShoppingCart } from "../context/ShoppingCartContext";
 import "../css/ShoppingCartNav.css";
 import shoppingCartIcon from "../images/icon-cart.svg";
 
-function ShoppingCartNav({ toggleShoppingCartWindow }) {
+function ShoppingCartNav() {
   const { checkout } = useShoppingCart();
+  const { toggleShoppingCartWindow } = useModal();
   let totalQuantity = checkout.length;
   return (
     <div onClick={toggleShoppingCartWindow} className="shopping-cart">

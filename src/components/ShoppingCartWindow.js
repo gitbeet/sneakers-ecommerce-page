@@ -1,13 +1,12 @@
 import React from "react";
+import { useModal } from "../context/ModalContext";
 import { useShoppingCart } from "../context/ShoppingCartContext";
 import "../css/ShoppingCartWindow.css";
 import Button from "./Button";
 import ShoppingCartWindowProduct from "./ShoppingCartWindowProduct";
 
-function ShoppingCartWindow({
-  showShoppingCartWindow,
-  toggleShoppingCartWindow,
-}) {
+function ShoppingCartWindow() {
+  const { showShoppingCartWindow, toggleShoppingCartWindow } = useModal();
   const { checkout } = useShoppingCart();
   const buttonContent = "Checkout";
 
