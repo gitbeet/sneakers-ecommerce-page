@@ -4,7 +4,7 @@ import avatarImage from "../images/image-avatar.png";
 import ShoppingCartNav from "./ShoppingCartNav";
 import UserAvatar from "./UserAvatar";
 import "../css/NavBar.css";
-
+// testing
 function NavBar({ toggleMobileMenu }) {
   return (
     <div className="navbar-mobile">
