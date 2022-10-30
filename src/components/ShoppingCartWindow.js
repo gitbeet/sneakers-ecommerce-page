@@ -4,6 +4,7 @@ import { useShoppingCart } from "../context/ShoppingCartContext";
 import "../css/ShoppingCartWindow.css";
 import Button from "./Button";
 import ShoppingCartWindowProduct from "./ShoppingCartWindowProduct";
+import Backdrop from "./Backdrop";
 
 function ShoppingCartWindow() {
   const { showShoppingCartWindow, toggleShoppingCartWindow } = useModal();
@@ -13,15 +14,11 @@ function ShoppingCartWindow() {
   return (
     <>
       <div
-        onClick={toggleShoppingCartWindow}
-        className={`shopping-cart-window-backdrop ${
-          showShoppingCartWindow ? "" : "hide"
-        }`}
-      ></div>
-      <div
-        className={`shopping-cart-window ${
-          showShoppingCartWindow ? "" : "hide"
-        }`}
+        className={
+          showShoppingCartWindow
+            ? "shopping-cart-window"
+            : "shopping-cart-window-hidden"
+        }
       >
         <h2 className="shopping-cart-window-header">Cart</h2>
         <div className="shopping-cart-window-body">
@@ -38,6 +35,9 @@ function ShoppingCartWindow() {
           <p className="empty-cart-message">Your cart is empty.</p>
         )}
       </div>
+      {showShoppingCartWindow && (
+        <Backdrop onClick={toggleShoppingCartWindow} />
+      )}
     </>
   );
 }

@@ -19,7 +19,7 @@ body,html{
     --clr-white : hsl(0, 0%, 100%);
     --clr-black : rgb(0,0,0);
 
-    --clr-backdrop :  rgba(0,0,0,.75);
+    --clr-backdrop :  rgba(0,0,0,.35);
 }
 
 img{
