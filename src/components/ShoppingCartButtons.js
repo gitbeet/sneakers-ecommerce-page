@@ -1,8 +1,6 @@
 import React from "react";
-import "../css/shoppingCartButtons.css";
+import "../css/ShoppingCartButtons.css";
 import ShoppingCartIcon from "../images/icon-cart.svg";
-import buttonMinus from "../images/icon-minus.svg";
-import buttonPlus from "../images/icon-plus.svg";
 import { useShoppingCart } from "../context/ShoppingCartContext";
 import Button from "./Button";
 import QuantityButton from "./QuantityButton";
