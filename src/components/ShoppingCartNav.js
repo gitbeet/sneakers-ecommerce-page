@@ -5,9 +5,9 @@ import "../css/ShoppingCartNav.css";
 import shoppingCartIcon from "../images/icon-cart.svg";
 
 function ShoppingCartNav() {
-  const { checkout } = useShoppingCart();
+  const { shoppingCart } = useShoppingCart();
   const { toggleShoppingCartWindow } = useModal();
-  let totalQuantity = checkout.length;
+  let totalQuantity = shoppingCart.length;
   return (
     <div onClick={toggleShoppingCartWindow} className="shopping-cart">
       <img src={shoppingCartIcon} alt="shopping cart icon" />
@@ -17,5 +17,4 @@ function ShoppingCartNav() {
     </div>
   );
 }
-
 export default ShoppingCartNav;

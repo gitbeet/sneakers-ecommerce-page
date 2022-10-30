@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect } from "react";
+import { createContext, useContext } from "react";
 import { useState } from "react";
 import { productData } from "../productData";
 
@@ -10,84 +10,35 @@ export function useShoppingCart() {
 }
 
 function ShoppingCartProvider({ children }) {
-  const [product, setProduct] = useState(productData);
+  const [products, setProducts] = useState(productData);
   const [shoppingCart, setShoppingCart] = useState([]);
-  const [checkout, setCheckout] = useState([]);
 
-  function addProduct(addedProduct) {
+  function addToCart(prod, quantity) {
+    if (quantity === 0) return;
     setShoppingCart((prev) => {
-      return prev.findIndex((prod) => prod.name === addedProduct.name) === -1
-        ? [...prev, { ...addedProduct, quantity: 1 }]
-        : prev.map((item) => {
-            return item.name === addedProduct.name
-              ? { ...item, quantity: item.quantity + 1 }
-              : item;
-          });
-    });
-  }
-
-  function removeProduct(productToRemove) {
-    setShoppingCart((prev) =>
-      prev.map((product) => {
-        return product.name === productToRemove.name
-          ? product.quantity > 0
-            ? { ...product, quantity: product.quantity - 1 }
-            : { ...product, quantity: 0 }
-          : product;
-      })
-    );
-  }
-
-  function addToCart(productToAdd) {
-    if (productToAdd.quantity === 0) return;
-    if (shoppingCart.length === 0) return;
-    setCheckout((prev) => {
-      // if(shoppingCart.find(prod => prod.name === productToAdd.name).quantity === 0){
-      //     return prev.filter(product => product.name !== productToAdd.name)
-      // }
-      // else{
-      return prev.findIndex((prod) => prod.name === productToAdd.name) === -1
-        ? [
-            ...prev,
-            {
-              ...productToAdd,
-              quantity: shoppingCart.find((prod) => prod.name === product.name)
-                .quantity,
-            },
-          ]
+      return prev.length === 0
+        ? [...prev, { ...prod, quantity: quantity }]
+        : prev.findIndex((product) => product.id === prod.id) === -1
+        ? [...prev, { ...prod, quantity: quantity }]
         : prev.map((product) => {
-            return product.name === productToAdd.name
-              ? {
-                  ...product,
-                  quantity:
-                    product.quantity +
-                    shoppingCart.find((prod) => prod.name === product.name)
-                      .quantity,
-                }
-              : product;
+            return product.id === prod.id
+              ? { ...product, quantity: product.quantity + quantity }
+              : { ...product };
           });
-      // }
     });
   }
 
-  function removeFromCart(productToRemove) {
-    setCheckout((prev) =>
-      prev.filter((product) => {
-        return product.name !== productToRemove;
-      })
-    );
+  function removeProduct(id) {
+    setShoppingCart((prev) => prev.filter((item) => item.id !== id));
   }
 
   return (
     <context.Provider
       value={{
-        product,
+        products,
         shoppingCart,
-        addProduct,
         removeProduct,
         addToCart,
-        removeFromCart,
-        checkout,
       }}
     >
       {children}

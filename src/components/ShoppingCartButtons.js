@@ -1,13 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import "../css/ShoppingCartButtons.css";
 import ShoppingCartIcon from "../images/icon-cart.svg";
 import { useShoppingCart } from "../context/ShoppingCartContext";
 import Button from "./Button";
 import QuantityButton from "./QuantityButton";
 
-function ShoppingCartButtons() {
-  const { product, shoppingCart, addProduct, removeProduct, addToCart } =
-    useShoppingCart();
+function ShoppingCartButtons({ product }) {
+  const { addToCart } = useShoppingCart();
+
+  const [quantity, setQuantity] = useState(0);
 
   const buttonContent = (
     <>
@@ -23,16 +24,20 @@ function ShoppingCartButtons() {
   return (
     <div className="shopping-cart-buttons">
       <div className="shopping-cart-quantity-buttons">
-        <QuantityButton type="minus" onClick={() => removeProduct(product)} />
-        <div className="shopping-cart-quantity-number">
-          {shoppingCart[0]?.quantity || 0}
-        </div>
-        <QuantityButton type="plus" onClick={() => addProduct(product)} />
+        <QuantityButton
+          type="minus"
+          onClick={() => setQuantity((prev) => (prev < 2 ? 0 : prev - 1))}
+        />
+        <div className="shopping-cart-quantity-number">{quantity || 0}</div>
+        <QuantityButton
+          type="plus"
+          onClick={() => setQuantity((prev) => prev + 1)}
+        />
       </div>
       <Button
         type="primary"
         size="md"
-        onClick={() => addToCart(product)}
+        onClick={() => addToCart(product, quantity)}
         content={buttonContent}
       />
     </div>

@@ -1,36 +1,38 @@
-*{
-    box-sizing: border-box;
-    font-family: 'Kumbh Sans', sans-serif;
+* {
+  box-sizing: border-box;
+  font-family: "Kumbh Sans", sans-serif;
 }
 
-body,html{
-    margin: 0;
-    background-color: var(--clr-white);
+body,
+html {
+  margin: 0;
+  background-color: var(--clr-white);
 }
 
-:root{
-    --clr-primary-500:  hsl(26, 100%, 55%);
-    --clr-primary-600:  hsl(32, 100%, 65%);
-    --clr-primary-900: hsl(25, 100%, 94%);
+:root {
+  --clr-primary-500: hsl(26, 100%, 55%);
+  --clr-primary-600: hsl(32, 100%, 65%);
+  --clr-primary-900: hsl(25, 100%, 94%);
 
-    --clr-very-dark-blue: hsl(220, 13%, 13%);
-    --clr-dark-grayish-blue: hsl(219, 9%, 45%);
-    --clr-light-grayish-blue: hsl(223, 64%, 98%);
-    --clr-white : hsl(0, 0%, 100%);
-    --clr-black : rgb(0,0,0);
+  --clr-neutral-300: hsl(220, 13%, 13%);
+  --clr-neutral-500: hsl(219, 9%, 45%);
+  --clr-neutral-800: hsl(223, 64%, 98%);
 
-    --clr-backdrop :  rgba(0,0,0,.35);
+  --clr-white: hsl(0, 0%, 100%);
+  --clr-backdrop: rgba(0, 0, 0, 1);
+
+  --box-shadow-smooth: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+    rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+}
+img {
+  max-width: 100%;
 }
 
-img{
-    max-width: 100%;
+a {
+  color: var(--clr-neutral-300);
+  text-decoration: none;
 }
 
-a{
-    color: var(--clr-very-dark-blue);
-    text-decoration: none;
-}
-
-a:visited{
-    text-decoration: none;
+a:visited {
+  text-decoration: none;
 }

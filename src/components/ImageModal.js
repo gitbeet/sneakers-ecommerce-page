@@ -20,7 +20,7 @@ function ImageModal() {
           <ImageCarousel modal={true} initialActiveImage={activeModalImage} />
         </div>
       )}
-      {showImageModal && <Backdrop onClick={toggleImageModal} />}
+      {showImageModal && <Backdrop onClick={toggleImageModal} opacity="75%" />}
     </>,
     document.getElementById("modal-root")
   );

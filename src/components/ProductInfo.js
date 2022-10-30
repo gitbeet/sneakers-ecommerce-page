@@ -9,27 +9,27 @@ import ShoppingCartButtons from "./ShoppingCartButtons";
 
 function ProductInfo() {
   const { toggleImageModal } = useModal();
-  const { product } = useShoppingCart();
+  const { products } = useShoppingCart();
 
   return (
     <div className="product-info-container">
       <ImageCarousel toggleImageModal={toggleImageModal} />
       <div className="product-info">
-        <p className="product-company">{product.company}</p>
-        <h2 className="product-name">{product.name}</h2>
-        <p className="product-description">{product.description}</p>
+        <p className="product-company">{products[0].company}</p>
+        <h2 className="product-name">{products[0].name}</h2>
+        <p className="product-description">{products[0].description}</p>
         <div className="prices">
           <div className="prices-left">
             <h3 className="product-price">
-              {formatCurrency((product.price * product.discount) / 100)}
+              {formatCurrency((products[0].price * products[0].discount) / 100)}
             </h3>
-            <h5 className="product-discount">{product.discount}%</h5>
+            <h5 className="product-discount">{products[0].discount}%</h5>
           </div>
           <h5 className="product-original-price">
-            {formatCurrency(product.price)}
+            {formatCurrency(products[0].price)}
           </h5>
         </div>
-        <ShoppingCartButtons />
+        <ShoppingCartButtons product={products[0]} />
       </div>
     </div>
   );

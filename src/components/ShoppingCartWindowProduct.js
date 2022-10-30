@@ -5,9 +5,10 @@ import "../css/ShoppingCartWindowProduct.css";
 import { useShoppingCart } from "../context/ShoppingCartContext";
 
 function ShoppingCartWindowProduct({ product }) {
-  const { removeFromCart } = useShoppingCart();
+  const { removeProduct } = useShoppingCart();
 
-  const { name, price, images, quantity, discount } = product;
+  const { name, price, images, quantity, discount, id } = product;
+  console.log(id);
 
   return (
     <div className="shopping-cart-window-product">
@@ -30,7 +31,7 @@ function ShoppingCartWindowProduct({ product }) {
       </div>
       <img
         className="shopping-cart-product-window-delete-icon"
-        onClick={() => removeFromCart(name)}
+        onClick={() => removeProduct(id)}
         src={iconDelete}
         alt="delete icon"
       />

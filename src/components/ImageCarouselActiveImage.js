@@ -15,7 +15,7 @@ export default function ImageCarouselActiveImage({
             key={index}
             className={`carousel-image ${index === activeImage ? "" : "hide"}`}
             src={image}
-            alt="carousel img"
+            alt="carousel element"
           />
         );
       })}

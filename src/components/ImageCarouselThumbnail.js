@@ -15,7 +15,6 @@ export default function ImageCarouselThumbnail({
     >
       <img
         onClick={() => onClick(id)}
-        key={id}
         className={`carousel-thumbnail ${
           id !== activeImage ? "" : "image-mute"
         } ${modal && id !== activeImage ? "modal-hover" : ""}`}

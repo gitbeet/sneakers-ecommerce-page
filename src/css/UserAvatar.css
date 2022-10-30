@@ -1,18 +1,19 @@
-.mobile-avatar{
-    cursor: pointer;
-    width: 35px;
-    border: 2px solid transparent;
-    border-radius: 50%;
-    transition: .1s ease-in-out;
+.mobile-avatar {
+  cursor: pointer;
+  width: 35px;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  transition: 0.1s ease-in-out;
 }
 
-.mobile-avatar:hover{
+@media (hover: hover) {
+  .mobile-avatar:hover {
     border-color: var(--clr-primary-500);
+  }
 }
 
-@media (min-width:1100px) {    
-.mobile-avatar{
+@media (min-width: 1100px) {
+  .mobile-avatar {
     width: 55px;
+  }
 }
-}
-

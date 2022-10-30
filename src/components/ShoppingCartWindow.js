@@ -8,7 +8,7 @@ import Backdrop from "./Backdrop";
 
 function ShoppingCartWindow() {
   const { showShoppingCartWindow, toggleShoppingCartWindow } = useModal();
-  const { checkout } = useShoppingCart();
+  const { shoppingCart } = useShoppingCart();
   const buttonContent = "Checkout";
 
   return (
@@ -22,16 +22,16 @@ function ShoppingCartWindow() {
       >
         <h2 className="shopping-cart-window-header">Cart</h2>
         <div className="shopping-cart-window-body">
-          {checkout.length > 0 &&
-            checkout.map((product) => (
+          {shoppingCart.length > 0 &&
+            shoppingCart.map((product) => (
               <ShoppingCartWindowProduct key={product.name} product={product} />
             ))}
 
-          {checkout.length > 0 && (
+          {shoppingCart.length > 0 && (
             <Button type="primary" size="sm" content={buttonContent} />
           )}
         </div>
-        {checkout.length === 0 && (
+        {shoppingCart.length === 0 && (
           <p className="empty-cart-message">Your cart is empty.</p>
         )}
       </div>

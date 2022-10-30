@@ -1,11 +1,11 @@
-.backdrop{
-    position: fixed;
-    top:0;
-    bottom:0;
-    left:0;
-    right:0;
-    z-index: 3;
-    min-width: 100vw;
-    min-height: 100vh;
-    background-color: var(--clr-backdrop);
+.backdrop {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  min-width: 100vw;
+  min-height: 100vh;
+  background-color: var(--clr-backdrop);
 }

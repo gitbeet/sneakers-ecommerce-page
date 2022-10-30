@@ -1,34 +1,37 @@
-.btn,.btn-md{
-    cursor: pointer;
-    border: none;
-    min-width: max-content;
-    font-size: 14px;
-    font-weight: 600;  
-    border-radius: 10px;
-    transition: .1s ease-in-out;
+.btn,
+.btn-md {
+  cursor: pointer;
+  border: none;
+  min-width: max-content;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 10px;
+  transition: 0.1s ease-in-out;
 }
 
-.btn-sm{
-    padding: 12px 30px;
+.btn-sm {
+  padding: 12px 30px;
 }
 
-.btn-md{
-    padding: 15px 40px;
+.btn-md {
+  padding: 15px 40px;
 }
 
-.btn-primary{    
-    background-color: var(--clr-primary-500);
-    color: white;
-    box-shadow: 0 10px 30px 5px hsla(26, 100%, 55%,30%);
+.btn-primary {
+  background-color: var(--clr-primary-500);
+  color: white;
+  box-shadow: var(--box-shadow-smooth);
 }
 
-.btn:hover{
-    opacity: .6;
+@media (hover: hover) {
+  .btn-primary:hover {
+    background-color: var(--clr-primary-600);
+  }
 }
 
-@media (min-width:1100px){
-    .btn-md{
-        font-size: 16px;
-        padding: 15px 80px;
-    }
+@media (min-width: 1100px) {
+  .btn-md {
+    font-size: 16px;
+    padding: 15px 80px;
+  }
 }

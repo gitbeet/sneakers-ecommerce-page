@@ -1,10 +1,9 @@
-.modal-close-button{
-    cursor: pointer;
-    position:absolute;
-    top:calc(50% - 380px);
-    left:calc(50% + 260px);
-    transform: scale(1.6);
-    z-index: 5;
-    filter:brightness(10);      
+.modal-close-button {
+  cursor: pointer;
+  position: absolute;
+  top: calc(50% - 380px);
+  left: calc(50% + 260px);
+  transform: scale(1.6);
+  z-index: 5;
+  filter: brightness(10);
 }
-

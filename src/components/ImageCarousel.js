@@ -12,19 +12,19 @@ function ImageCarousel({
   modal = false,
   initialActiveImage = 0,
 }) {
-  const { product } = useShoppingCart();
+  const { products } = useShoppingCart();
   const [activeImage, setActiveImage] = useState(initialActiveImage);
 
   useEffect(() => {
     function keyDownFn(e) {
       if (e.key === "ArrowLeft") {
         setActiveImage((prev) =>
-          prev < 1 ? product.images.full.length - 1 : prev - 1
+          prev < 1 ? products[0].images.full.length - 1 : prev - 1
         );
       }
       if (e.key === "ArrowRight") {
         setActiveImage((prev) =>
-          prev > product.images.full.length - 2 ? 0 : prev + 1
+          prev > products[0].images.full.length - 2 ? 0 : prev + 1
         );
       }
     }
@@ -41,8 +41,8 @@ function ImageCarousel({
       }
     }
     if (direction === "next") {
-      if (activeImage > product.images.full.length - 2) {
-        setActiveImage(product.images.full.length - 1);
+      if (activeImage > products[0].images.full.length - 2) {
+        setActiveImage(products[0].images.full.length - 1);
       } else {
         setActiveImage((prev) => prev + 1);
       }
@@ -64,7 +64,7 @@ function ImageCarousel({
       />
       <ImageCarouselActiveImage
         modal={modal}
-        product={product}
+        product={products[0]}
         activeImage={activeImage}
         onClick={toggleImageModal}
       />
@@ -72,7 +72,7 @@ function ImageCarousel({
         modal={modal}
         activeImage={activeImage}
         onClick={setActiveImage}
-        product={product}
+        product={products[0]}
       />
     </div>
   );
